@@ -22,15 +22,9 @@
       }
 
       .left{
-        display : flex;
-        justify-content : center;
-        align-items : center;
         height : 100%;
       }
       .right{
-        display : flex;
-        justify-content : center;
-        align-items : center;
         height : 100%;
         background-color: black;
         color: white;
@@ -48,18 +42,18 @@
         height: 100%;
         width: 100%;
       }
-      /* #carousel-stamps {
+      #carousel-stamps {
         height: 100%;
-      } */
-      /* .carousel-inner {
+      }
+      .carousel-inner {
         height: 100%;
-      } */
-      /* .carousel-item {
+      }
+      .carousel-item {
         height: 100%;
-      } */
+      }
       .img-stamp {
-        max-width: 50%;
-        height: auto;
+        max-height: 100%;
+        max-width: 80%;
       }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -91,15 +85,12 @@
             let nameTH = val.name_th;
             let postmarkUrl = "postmark/" + id + ".json?" + (new Date().getTime());
             $.getJSON(postmarkUrl, function(items) {
-              let detail = "";
               detail += '<div id="' + id + '">';
               $.each( items, function( index, item ) {
-                let width;
-                let height;
                 let active = '';
                 if(index == 0) active = 'active';
                 detail += '<div class="carousel-item ' + active + '">';
-                detail += '<img src="' + item.image + '" class="img-stamp mx-auto my-auto d-block" />';
+                detail += '<img src="' + item.image + '" class="img-stamp mx-auto d-block"/>';
                 detail += '</div>';
               });
               detail += "<div>";
