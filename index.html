@@ -1,40 +1,61 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-        <meta charset="UTF-8">
-        <title>Create Map Sample | Longdo Map</title>
-        <style type="text/css">
-html {
-  height: 100%;
-}
-body {
-  margin: 0px;
-  height: 100%;
-}
-#map {
-  height: 100%;
-}
-</style>
-        <script type="text/javascript" src="https://api.longdo.com/map/?key=4b0c77da1c9b919f11b8fb491b6faac7"></script>
-        <script>
-          function init() {
-            var map = new longdo.Map({
-              placeholder: document.getElementById('map')
-            });
-            map.Event.bind('click', function() {
-              var mouseLocation = map.location(longdo.LocationMode.Pointer);
-              map.Overlays.add(new longdo.Marker(mouseLocation));
-            });
-            map.Event.bind('overlayClick', function(overlay) {
-              if (overlay instanceof longdo.Marker) {
-                console.log('Marker');
-                console.log(overlay);
-              }
-            });
-            var marker = new longdo.Marker({ lon: 100.56642169397784, lat: 13.809832451216709 });
-            map.Overlays.add(marker);
+    <meta charset="UTF-8">
+    <title>Create Map Sample | Longdo Map</title>
+    <style type="text/css">
+      html {
+        height: 100%;
+      }
+      body {
+        margin: 0px;
+        height: 100%;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://api.longdo.com/map/?key=4b0c77da1c9b919f11b8fb491b6faac7"></script>
+    <script>
+      function init() {
+        var map = new longdo.Map({
+          placeholder: document.getElementById('map')
+        });
+        // map.Event.bind('click', function() {
+        //   let mouseLocation = map.location(longdo.LocationMode.Pointer);
+        //   map.Overlays.add(new longdo.Marker(mouseLocation));
+        // });
+        map.Event.bind('overlayClick', function(overlay) {
+          if (overlay instanceof longdo.Marker) {
+            console.log('Marker');
+            console.log(overlay.id);
           }
-        </script>
+        });
+        setPostOfficeMarkers(map)
+      }
+      function setPostOfficeMarkers(map) {
+        $.getJSON("post_office.json", function(data) {
+          $.each( data, function( key, val ) {
+            let id = val.id;
+            let detail = "";
+            let postmarkUrl = "postmark/" + id + ".json";
+            $.getJSON(postmarkUrl, function(items) {
+              detail += "<div>";
+              $.each( items, function( index, item ) {
+                detail += '<img width="50" src="' + item.image + '" />';
+              });
+              detail += "<div>";
+            }).fail(function() {
+              console.log( "error" );
+            }).done(function () {
+              let marker = new longdo.Marker({lon: val.lon, lat: val.lat }, {title: val.name_en, detail: detail});
+              map.Overlays.add(marker);
+            });
+          });
+        });
+      }
+    </script>
   </head>
   <body onload="init();">
       <div id="map"></div>

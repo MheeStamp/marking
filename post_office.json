@@ -1,0 +1,107 @@
+[
+    {
+        "id": "SAMYAEK_LATPHRAO",
+        "name_th": "สามแยกลาดพร้าว",
+        "name_en": "SAMYAEK LATPHRAO",
+        "lat": 13.809832451216709,
+        "lon": 100.56642169397784
+    },
+    {
+        "id": "PATTANI",
+        "name_th": "ปัตตานี",
+        "name_en": "PATTANI",
+        "lat": 6.865247910227897,
+        "lon": 101.25256841079737
+    },
+    {
+        "id": "BANG_SAEN",
+        "name_th": "บางแสน",
+        "name_en": "BANG SAEN",
+        "lat": 13.291427157074601,
+        "lon": 100.93844018081732
+    },
+    {
+        "id": "BURAPHA_UNIVERSITY",
+        "name_th": "มหาวิทยาลัยบูรพา",
+        "name_en": "BURAPHA UNIVERSITY",
+        "lat": 13.280865419305933,
+        "lon": 100.9270930754002
+    },
+    {
+        "id": "HAT_YAI",
+        "name_th": "หาดใหญ่",
+        "name_en": "HAT YAI",
+        "lat": 7.199176262062104, 
+        "lon": 100.52170273881919
+    },
+    {
+        "id": "THAP_SAKAE",
+        "name_th": "ทับสะแก",
+        "name_en": "THAP SAKAE",
+        "lat": 11.588683261457243, 
+        "lon": 99.60492627093943
+    },
+    {
+        "id": "PHANH_KHON",
+        "name_th": "พังโคน",
+        "name_en": "PHANH KHON",
+        "lat": 17.62902837933857, 
+        "lon": 103.70356627613293
+    },
+    {
+        "id": "CHORAKHE_BUA",
+        "name_th": "จรเข้บัว",
+        "name_en": "CHORAKHE BUA",
+        "lat": 13.838960539458283, 
+        "lon": 100.6597139669558
+    },
+    {
+        "id": "PHETCHABURI_TAT_MAI",
+        "name_th": "เพชรบุรีตัดใหม่",
+        "name_en": "PHETCHABURI TAT MAI",
+        "lat": 13.751197718846983,
+        "lon": 100.58354816393825
+    },
+    {
+        "id": "PATHUM_THANI",
+        "name_th": "ปทุมธานี",
+        "name_en": "PATHUM THANI",
+        "lat": 14.02133694114133,
+        "lon": 100.53298482830826
+    },
+    {
+        "id": "SUPHAN_BURI",
+        "name_th": "สุพรรณบุรี",
+        "name_en": "SUPHAN BURI",
+        "lat": 14.50382130458401,
+        "lon": 100.12466193667032
+    },
+    {
+        "id": "SI_THAT ",
+        "name_th": "ศรีธาตุ",
+        "name_en": "SI THAT ",
+        "lat": 17.079041694902223,
+        "lon": 103.22182376387279
+    },
+    {
+        "id": "NAKHON_THAI",
+        "name_th": "นครไทย",
+        "name_en": "NAKHON THAI",
+        "lat": 17.219772486772445,
+        "lon": 100.8358886016363
+    },
+    {
+        "id": "KUT_BAK",
+        "name_th": "กุดบาก",
+        "name_en": "KUT BAK",
+        "lat": 17.29450098815633,
+        "lon":  103.78596836997369
+    },
+    {
+        "id": "KASET_SOMBUN",
+        "name_th": "เกษตรสมบูรณ์",
+        "name_en": "KASET SOMBUN",
+        "lat": 16.391245310571787,
+        "lon": 101.91836665656868
+    }
+]
