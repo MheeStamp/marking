@@ -21,6 +21,18 @@ body {
             var map = new longdo.Map({
               placeholder: document.getElementById('map')
             });
+            map.Event.bind('click', function() {
+              var mouseLocation = map.location(longdo.LocationMode.Pointer);
+              map.Overlays.add(new longdo.Marker(mouseLocation));
+            });
+            map.Event.bind('overlayClick', function(overlay) {
+              if (overlay instanceof longdo.Marker) {
+                console.log('Marker');
+                console.log(overlay);
+              }
+            });
+            var marker = new longdo.Marker({ lon: 100.56642169397784, lat: 13.809832451216709 });
+            map.Overlays.add(marker);
           }
         </script>
   </head>
