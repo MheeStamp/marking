@@ -44,9 +44,22 @@
         }
       }
 
-      #map{
+      #map {
         height: 100%;
         width: 100%;
+      }
+      /* #carousel-stamps {
+        height: 100%;
+      } */
+      /* .carousel-inner {
+        height: 100%;
+      } */
+      /* .carousel-item {
+        height: 100%;
+      } */
+      .img-stamp {
+        max-width: 50%;
+        height: auto;
       }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -83,7 +96,11 @@
               $.each( items, function( index, item ) {
                 let width;
                 let height;
-                detail += '<img width="50%" src="' + item.image + '" />';
+                let active = '';
+                if(index == 0) active = 'active';
+                detail += '<div class="carousel-item ' + active + '">';
+                detail += '<img src="' + item.image + '" class="img-stamp mx-auto my-auto d-block" />';
+                detail += '</div>';
               });
               detail += "<div>";
               $("#detail").append(detail);
@@ -102,8 +119,19 @@
         <div class="col col-lg-6 col-sm-12 left">
           <div id="map"></div>
         </div>
-        <div id="display" class="col col-lg-6 col-sm-12 right">
-          <p>โปรดคลิกเลือกหมุดบนแผนที่</p>
+        <div class="col col-lg-6 col-sm-12 right">
+          <div id="carousel-stamps" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
+            <div id="display" class="carousel-inner">
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel-stamps" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel-stamps" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
